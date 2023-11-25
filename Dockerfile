@@ -32,7 +32,8 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /usr/local
 
-COPY package.json package-lock.json ./
+# COPY package.json package-lock.json ./
+COPY package*.json ./
 
 
 RUN npm --global config set user pptruser \
