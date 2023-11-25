@@ -46,6 +46,8 @@ RUN npm config set user pptruser --global \
 # RUN npm i puppeteer -g
 RUN npm install
 
-ENTRYPOINT ["/bin/sh", "-c" , "npm install && npm run start"]
+# ENTRYPOINT ["/bin/sh", "-c" , "npm install && npm run start"]
+ENTRYPOINT ["/bin/sh", "-c" , "export PATH=~/.npm-global/bin:$PATH && npm install && npm run start"]
+
 
 EXPOSE 8080
